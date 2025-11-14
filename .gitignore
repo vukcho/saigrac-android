@@ -1,15 +1,41 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Ignore all .idea, but allow shared configs
+.idea/*
+!.idea/codeStyles/
+!.idea/runConfigurations/
+!.idea/codeStyles/*
+!.idea/runConfigurations/*
+
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Local configs
 local.properties
+/local.properties
+
+# OS files
+.DS_Store
+
+# IML files
+*.iml
+
+# Native builds
+.cxx/
+externalNativeBuild/
+
+# Android captures
+captures/
+
+##############################
+### Keystore & secrets
+##############################
+*.keystore
+*.jks
+secrets.properties
+
+##############################
+### Generated
+##############################
+.kotlinc/
+.kotlin/
