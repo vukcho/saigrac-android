@@ -13,9 +13,13 @@ spotless {
         ktlint("1.2.1").editorConfigOverride(
             mapOf(
                 "ktlint_standard_package-name" to "disabled",
-                "ktlint_standard_annotation" to "disabled"
-            )
+                "ktlint_standard_annotation" to "disabled",
+            ),
         )
+        suppressLintsFor {
+            step = "ktlint"
+            shortCode = "standard:function-naming"
+        }
         trimTrailingWhitespace()
         endWithNewline()
     }
@@ -37,4 +41,3 @@ spotless {
         endWithNewline()
     }
 }
-
