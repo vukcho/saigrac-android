@@ -3,4 +3,38 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
+    id("com.diffplug.spotless") version "8.0.0"
 }
+
+spotless {
+
+    kotlin {
+        target("**/*.kt")
+        ktlint("1.2.1").editorConfigOverride(
+            mapOf(
+                "ktlint_standard_package-name" to "disabled",
+                "ktlint_standard_annotation" to "disabled"
+            )
+        )
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    kotlinGradle {
+        target("**/*.gradle.kts")
+        ktlint()
+    }
+
+    format("xml") {
+        target("**/*.xml")
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    format("misc") {
+        target("**/*.md", "**/.gitignore")
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
