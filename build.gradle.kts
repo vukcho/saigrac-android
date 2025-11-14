@@ -3,43 +3,17 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
-    id("com.diffplug.spotless") version "8.0.0"
+    id("org.jlleitschuh.gradle.ktlint") version "14.0.1"
 }
 
-spotless {
-
-    kotlin {
-        target("**/*.kt")
-        ktlint("1.2.1").editorConfigOverride(
-            mapOf(
-                "ktlint_standard_package-name" to "disabled",
-                "ktlint_standard_annotation" to "disabled",
-                "indent_size" to "4",
-                "continuation_indent_size" to "4",
-            ),
-        )
-        suppressLintsFor {
-            step = "ktlint"
-            shortCode = "standard:function-naming"
-        }
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
-
-    kotlinGradle {
-        target("**/*.gradle.kts")
-        ktlint()
-    }
-
-    format("xml") {
-        target("src/**/*.xml")
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
-
-    format("misc") {
-        target("**/*.md", "**/.gitignore")
-        trimTrailingWhitespace()
-        endWithNewline()
+ktlint {
+    version.set("1.7.1")
+    debug.set(true)
+    verbose.set(true)
+    android.set(true)
+    outputColorName.set("RED")
+    reporters {
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN)
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
     }
 }
