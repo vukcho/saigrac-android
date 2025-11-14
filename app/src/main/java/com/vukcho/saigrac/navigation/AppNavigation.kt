@@ -27,7 +27,7 @@ fun AppNavigation(
             route = "route",
         ) {
             Text(
-                text = "Hello world!",
+                text = "Hello world!!",
                 modifier = modifier,
             )
         }
