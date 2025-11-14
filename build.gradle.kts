@@ -30,7 +30,7 @@ spotless {
     }
 
     format("xml") {
-        target("**/*.xml")
+        target("src/**/*.xml")
         trimTrailingWhitespace()
         endWithNewline()
     }
