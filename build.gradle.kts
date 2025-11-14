@@ -14,6 +14,8 @@ spotless {
             mapOf(
                 "ktlint_standard_package-name" to "disabled",
                 "ktlint_standard_annotation" to "disabled",
+                "indent_size" to "4",
+                "continuation_indent_size" to "4",
             ),
         )
         suppressLintsFor {
