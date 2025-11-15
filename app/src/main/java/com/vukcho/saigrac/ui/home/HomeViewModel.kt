@@ -11,6 +11,6 @@ data object HomeScreenState
 @HiltViewModel
 class HomeViewModel @Inject constructor() :
     SaigracViewModel<HomeScreenState, HomeScreenAction>(initialState = HomeScreenState) {
-        override fun onInitialState() {
-        }
+    override fun onInitialState() {
     }
+}
