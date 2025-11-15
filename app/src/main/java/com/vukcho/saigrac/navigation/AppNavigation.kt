@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.vukcho.saigrac.navigation.destinations.HomeDestination
+import com.vukcho.saigrac.ui.camera.CameraScreen
 import com.vukcho.saigrac.ui.home.HomeScreen
 import com.vukcho.saigrac.ui.saigracViewModel
 
@@ -29,6 +30,13 @@ fun AppNavigation(
             route = HomeDestination.Home.route,
         ) {
             HomeScreen(viewModel = saigracViewModel())
+        }
+
+        composable(
+            route = HomeDestination.Camera.route,
+            arguments = HomeDestination.Camera.arguments,
+        ) {
+            CameraScreen(viewModel = saigracViewModel())
         }
     }
 }
