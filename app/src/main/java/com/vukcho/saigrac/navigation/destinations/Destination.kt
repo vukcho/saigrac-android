@@ -1,4 +1,4 @@
-package com.vukcho.saigrac.navigation
+package com.vukcho.saigrac.navigation.destinations
 
 import androidx.navigation.NamedNavArgument
 

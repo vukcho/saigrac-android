@@ -1,5 +1,6 @@
 package com.vukcho.saigrac.navigation
 
+import com.vukcho.saigrac.navigation.destinations.Destination
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 

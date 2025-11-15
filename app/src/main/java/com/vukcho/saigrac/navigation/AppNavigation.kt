@@ -2,12 +2,14 @@ package com.vukcho.saigrac.navigation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.vukcho.saigrac.navigation.destinations.HomeDestination
+import com.vukcho.saigrac.ui.home.HomeScreen
+import com.vukcho.saigrac.ui.saigracViewModel
 
 @Composable
 fun AppNavigation(
@@ -20,16 +22,13 @@ fun AppNavigation(
 
     NavHost(
         navController = navController,
-        startDestination = "route",
+        startDestination = HomeDestination.Home.route,
         modifier = modifier.padding(innerPadding),
     ) {
         composable(
-            route = "route",
+            route = HomeDestination.Home.route,
         ) {
-            Text(
-                text = "Hello world!!",
-                modifier = modifier,
-            )
+            HomeScreen(viewModel = saigracViewModel())
         }
     }
 }
